@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <title>AppCloud</title>
+</head>
+
+<body onload="onDeviceReady()">
+    
+    <div class="content app">
+        <div id="deviceready" class="blink">
+            <ul id="dropdown1" class="dropdown-content left">
+                <li><a href="/logout/">Sair</a></li>
+                <li class="divider"></li>
+                <li><a href="#modalExcluir">Excluir conta</a></li>
+            </ul>
+            <nav class="grey darken-4">
+                <div class="nav-wrapper container">
+                  <a href="#" class="brand-logo"><i class="material-icons">cloud</i>AppCloud</a>
+                  <a href="#" data-activates="menu-mobile" class="button-collapse left"><i class="material-icons left">menu</i></a>
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true"><i class="material-icons left">date_range</i>{{ request.user.username }}<i class="material-icons right">arrow_drop_down</i></a></li>
+                  </ul>
+                  <ul id="menu-mobile" class="side-nav">                    
+        
+                    <li><a href="#!"><i class="material-icons">cloud</i> AppCloud</a></li>
+                    <li><a href="#" onclick="sair()"><i class="material-icons">exit_to_app</i>Sair</a></li>
+                  </ul>
+
+                </div>
+            </nav>
+            <div class="row">
+            <div class="col s12 m12">
+              <div class="card grey darken-2">
+                <div class="card-content white-text">
+                  <div id="ipbridge">
+                      
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="card blue-grey darken-1 transp">
+                
+                  <!--<div class="progress">
+                        <div class="indeterminate"></div>
+                  </div>-->
+                  <ul id="tabs-swipe-demo" class="tabs">
+                    <li class="tab col s6"><a href="#test-swipe-1">Op. locais</a></li>
+                    <li class="tab col s6"><a class="active" href="#test-swipe-2">Op. remotas</a></li>
+                  </ul>
+                  <div class="row">
+                      <div id="test-swipe-1" class="col s12 white">
+                           <div class="input-field">
+                              <input placeholder="Ex.: 74, 1, 2, 56, 2" id="numbersLocal"  type="text" class="validate" onkeyup="somenteNumeros(this);">
+                              <label class="active" for="first_name2">Informe os números</label>
+                          </div>
+                          <div class="input-field">
+                            <select id="operationschoiceLocal">
+                              <option value="" disabled selected>Operações disponíveis</option>
+                              <option value="ordena">Ordenação</option>
+                              <option value="soma">Soma</option>
+                              <option value="max">Maior número</option>
+                              <option value="min">Menor número</option>
+                            </select>
+                            <label>Selecione uma operação</label>
+                          </div>
+                          
+                          <div class="row">
+                             <button onclick="entrarLocal();" class="waves-effect waves-light btn right"><i class="material-icons right">send</i>Entrar</button> 
+                          </div>
+                      </div>
+                  
+                      <div id="test-swipe-2" class="col s12 white">
+                          <div class="input-field">
+                            <select id="serverschoice">
+                              <option value="" disabled selected>Servidores disponíveis</option>
+                             
+                            </select>
+                            <label>Selecione um servidor</label>
+                          </div>
+                          <div class="input-field">
+                              <input placeholder="Ex.: 74, 1, 2, 56, 2" id="numbers"  type="text" class="validate" onkeyup="somenteNumeros(this);">
+                              <label class="active" for="first_name2">Informe os números</label>
+                          </div>
+                          <div class="input-field">
+                            <select id="operationschoice">
+                              <option value="" disabled selected>Operações disponíveis</option>
+                              <option value="ordena">Ordenação</option>
+                              <option value="soma">Soma</option>
+                              <option value="max">Maior número</option>
+                              <option value="min">Menor número</option>
+                            </select>
+                            <label>Selecione uma operação</label>
+                          </div>
+                          
+                          <div class="row">
+                             <button onclick="entrar();" class="waves-effect waves-light btn right"><i class="material-icons right">send</i>Entrar</button> 
+                          </div>
+                          
+                      </div>
+                  </div>
+                  
+                  <div id="cont">
+                      
+                  </div>
+                  
+                
+              </div>
+            </div>
+            <div id="fodase"></div>
+          </div>
+              
+              <div class="fixed-action-btn vertical" style="bottom: 15px; right: 15px;">
+                <a class="btn-floating btn-large green">
+                  <i class="large material-icons">settings</i>
+                </a>
+                <ul>
+                  <li><a class="btn-floating red" href="#modalDev"><i class="material-icons">help</i></a></li>
+                  <li><a class="btn-floating yellow darken-1" href="#modalOn"><i class="material-icons">room</i></a></li>
+                  
+                </ul>
+              </div>
+            <div id="modalDev" class="modal">
+                <div class="modal-content">
+                    <h4>Desenvolvedor:</h4>
+                    <div class="col l12">
+                        <p>Diego Fernando</p>
+                        <p><a href="http://fb.com/difernandosl">fb.com/difernandosl</a></p>
+                        <p><a href="http://github.com/diegofsousa">github.com/diegofsousa</a></p>
+                    </div>
+                </div>
+            </div>
+            <div id="modalResponse" class="modal">
+                <div class="modal-content">
+                    <h5 id="titulo"></h5>
+                    <div id="texto" class="col l12">
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button href="#!" class="modal-action modal-close waves-effect white btn-flat">Sair</button>
+                </div>
+            </div>
+            <div id="modalOn" class="modal">
+                <div class="modal-content">
+                    <h5>Informe o IP do servidor bridge</h5>
+                    <div class="col l12">
+                        <input placeholder="Ex: 192.168.x.x" id="add" type="tel" class="validate">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                    <button onclick="saveIPBridge();" class="waves-effect green btn-flat">Confirmar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+
+        
+        app.initialize();
+        $(".button-collapse").sideNav();
+        $(".dropdown-button").dropdown({ hover: false });
+        $('.modal').modal();
+        
+            $('select').material_select();
+       
+
+    </script>
+</body>
+
+</html>
