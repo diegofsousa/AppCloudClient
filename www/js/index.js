@@ -17,7 +17,10 @@
  * under the License.
  */
 
+// Variavel global destinada ao IP bridge.
 var IpBridge = 0;
+
+// Variavel global destinada ao array de servidores disponíveis.
 var servers = new Object();
 
 var com = new Object();
@@ -49,6 +52,10 @@ var app = {
     }
 };
 
+
+/*
+Função responsável por salvar o IP que o usuário informa.
+*/
 function saveIPBridge(){
     servers = null;
     IpBridge = $('#add').val();
@@ -66,6 +73,9 @@ function saveIPBridge(){
     $("#modalOn").modal('close');
 }
 
+/*
+Função responsável validar o input para que aceite apenas numeros e vírgula.
+*/
 function somenteNumeros(num) {
     var er = /[^0-9,]/;
     er.lastIndex = 0;
@@ -75,6 +85,9 @@ function somenteNumeros(num) {
     }
 }
 
+/*
+Função responsável por atualizar a lista de servidores remotos disponíveis.
+*/
 function ser_choices(){
     console.log(servers);
 
@@ -88,6 +101,9 @@ function ser_choices(){
     }
 }
 
+/*
+Função responsável por validar conexão com servidor bridge remoto.
+*/
 function checkStatusBridge(){
     var aux = false;
     $.ajax({
@@ -116,6 +132,9 @@ function checkStatusBridge(){
     return aux;
 }
 
+/*
+Função responsável pelo evento no botão "Entrar".
+*/
 function entrar(){
     var server_choice = $('#serverschoice').val();
     var seq_numbers = $('#numbers').val();
@@ -132,6 +151,9 @@ function entrar(){
     }
 }
 
+/*
+Função responsável por enviar requisição ao servidor bridge buscando o resultado da operação.
+*/
 function ajax_num(server_choice, seq_numbers, num_op){
 
     $.ajax({
@@ -157,8 +179,16 @@ function ajax_num(server_choice, seq_numbers, num_op){
 }
 
 
-//Operações locais
 
+
+
+/*----------------------------------------------------------------------------*/
+/*                       Operações locais                                     */
+/*----------------------------------------------------------------------------*/
+
+/*
+Função responsável pelo evento no botão "Entrar".
+*/
 function entrarLocal(){
     var numbers = $('#numbersLocal').val().split(',');
     var option = $('#operationschoiceLocal').val();
@@ -176,6 +206,10 @@ function entrarLocal(){
     //console.log(numbers);
 }
 
+
+/*
+Função responsável por realizar operação.
+*/
 function oper_local(numbers, oper){
     
     if(oper == 'ordena'){
@@ -207,10 +241,19 @@ function oper_local(numbers, oper){
     
 }
 
+/*
+Função responsável no auxílio da ordenação da lista.
+*/
 function sortfunction(a, b){
   return (a - b) //faz com que o array seja ordenado numericamente e de ordem crescente.
 }
 
+
+
+
+/*
+Função responsável por sair do app".
+*/
 function sair(){
     navigator.app.exitApp();
 }
