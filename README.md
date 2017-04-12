@@ -9,4 +9,4 @@ MobileCloudServer: https://github.com/diegofsousa/MobileCloudBridgeServer<br>
 
 Screenshot:
 
-![screenshot](screenshot.jpg “Chat Window”)
+![screenshot](screenshot.jpg)
