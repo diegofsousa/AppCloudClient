@@ -10,14 +10,14 @@
     <content src="index.html" />    
     <preference name="Orientation" value="portrait"/>
     <preference name="Fullscreen" value="false"/>
+    <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" ></activity>
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreen" value="screen"/>
     <preference name="SplashScreenDelay" value="3000"/>
     <preference name="ShowSplashScreenSpinner" value="false"/>
     <preference name="FadeSplashScreen" value="true"/>
-    <preference name="BackgroundColor" value="0xff0000ff"/>
-    <preference name="ShowTitle" value="false"/>
+
     <plugin name="cordova-plugin-console" source="npm" spec="~1.0.2" />
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-device-motion" source="npm" spec="~1.2.0" />
