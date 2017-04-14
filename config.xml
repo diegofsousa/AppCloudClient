@@ -7,9 +7,9 @@
     <author email="diegofernando5672@gmail.com" href="http://github.com/diegofsousa">
         AppCloud
     </author>
-    <content src="index.html" />    
+    <content src="index.html" />
     <preference name="Orientation" value="portrait"/>
-    <preference name="Fullscreen" value="true"/>
+    <preference name="Fullscreen" value="false"/>
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreen" value="screen"/>
@@ -33,11 +33,7 @@
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <splash density="port-ldpi" src="www/res/screen/android/drawable-port-ldpi-screen.png" />
-    <splash density="port-mdpi" src="www/res/screen/android/drawable-port-mdpi-screen.png" />
-    <splash density="port-hdpi" src="www/res/screen/android/drawable-port-hdpi-screen.png" />
-    <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
-    <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
-    <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
+    <splash src="www/res/screen/splash.png" />
 
     <platform name="android">
         <preference name="StatusBarBackgroundColor" value="#211717"/>
