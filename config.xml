@@ -16,6 +16,8 @@
     <preference name="SplashScreenDelay" value="3000"/>
     <preference name="ShowSplashScreenSpinner" value="false"/>
     <preference name="FadeSplashScreen" value="true"/>
+    <preference name="BackgroundColor" value="0xff0000ff"/>
+    <preference name="ShowTitle" value="false"/>
     <plugin name="cordova-plugin-console" source="npm" spec="~1.0.2" />
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-device-motion" source="npm" spec="~1.2.0" />
@@ -40,7 +42,6 @@
 
     <platform name="android">
         <preference name="StatusBarBackgroundColor" value="#211717"/>
-        <preference name="ShowTitle" value="false"/>
         <icon density="ldpi" src="www/res/icon/android/192.png" />
         <icon density="mdpi" src="www/res/icon/android/144.png" />
         <icon density="hdpi" src="www/res/icon/android/96.png" />
