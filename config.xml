@@ -30,6 +30,13 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="~4.0.0" />
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+    <splash density="port-ldpi" src="www/res/screen/android/drawable-port-ldpi-screen.png" />
+    <splash density="port-mdpi" src="www/res/screen/android/drawable-port-mdpi-screen.png" />
+    <splash density="port-hdpi" src="www/res/screen/android/drawable-port-hdpi-screen.png" />
+    <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
+    <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
+    <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
+
     <platform name="android">
         <preference name="StatusBarBackgroundColor" value="#211717"/>
         <icon density="ldpi" src="www/res/icon/android/192.png" />
@@ -38,12 +45,7 @@
         <icon density="xhdpi" src="www/res/icon/android/72.png" />
         <icon density="xxhdpi" src="www/res/icon/android/48.png" />
         <icon density="xxxhdpi" src="www/res/icon/android/36.png" />
-        <splash density="port-ldpi" src="www/res/screen/android/drawable-port-ldpi-screen.png" />
-        <splash density="port-mdpi" src="www/res/screen/android/drawable-port-mdpi-screen.png" />
-        <splash density="port-hdpi" src="www/res/screen/android/drawable-port-hdpi-screen.png" />
-        <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
-        <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
-        <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
+        
     </platform>
     <access origin="*" />
     <allow-intent href="http://*/*" />
