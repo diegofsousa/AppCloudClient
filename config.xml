@@ -10,7 +10,6 @@
     <content src="index.html" />    
     <preference name="Orientation" value="portrait"/>
     <preference name="Fullscreen" value="true"/>
-    <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreen" value="screen"/>
