@@ -10,7 +10,6 @@
     <content src="index.html" />    
     <preference name="Orientation" value="portrait"/>
     <preference name="Fullscreen" value="false"/>
-    <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" ></activity>
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreen" value="screen"/>
@@ -50,6 +49,26 @@
         <icon density="xxxhdpi" src="www/res/icon/android/36.png" />
         
     </platform>
+    <widget xmlns = "http://www.w3.org/ns/widgets" 
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+    xmlns:android = "http://schemas.android.com/apk/res/android"
+
+        id        = "com.domain.app"
+        version   = "1.0.0">
+
+        ...
+
+        <gap:config-file platform="android" parent="/manifest">
+            <supports-screens 
+                android:xlargeScreens="true" 
+                android:largeScreens="true" 
+                android:smallScreens="true" />
+            <application android:theme="@android:style/Theme.NoTitleBar" >
+                <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+                </activity>
+            </application>
+        </gap:config-file>
+    </widget>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
