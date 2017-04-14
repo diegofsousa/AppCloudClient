@@ -37,13 +37,7 @@
 
     <platform name="android">
         <preference name="StatusBarBackgroundColor" value="#211717"/>
-        <icon density="ldpi" src="www/res/icon/android/192.png" />
-        <icon density="mdpi" src="www/res/icon/android/144.png" />
-        <icon density="hdpi" src="www/res/icon/android/96.png" />
-        <icon density="xhdpi" src="www/res/icon/android/72.png" />
-        <icon density="xxhdpi" src="www/res/icon/android/48.png" />
-        <icon density="xxxhdpi" src="www/res/icon/android/36.png" />
-        
+        <icon density="ldpi" src="www/res/icon/icon.png" />
     </platform>
 
     <access origin="*" />
