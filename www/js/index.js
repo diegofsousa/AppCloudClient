@@ -43,6 +43,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        navigator.splashscreen.show();
          
         $("#modalOn").modal('open');
         $('#ipbridge').html('<p><i class="tiny material-icons">room</i> Nenhum IP conectado</p>');

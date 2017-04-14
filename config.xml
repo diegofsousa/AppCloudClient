@@ -13,7 +13,7 @@
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="SplashScreen" value="screen"/>
     <preference name="SplashScreenDelay" value="3000"/>
-    <preference name="ShowSplashScreenSpinner" value="true"/>
+    <preference name="ShowSplashScreenSpinner" value="false"/>
     <preference name="FadeSplashScreen" value="true"/>
     <plugin name="cordova-plugin-console" source="npm" spec="~1.0.2" />
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
