@@ -30,7 +30,6 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="~4.0.0" />
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <splash src="www/res/screen/android/drawable-land-ldpi-screen.png"  />
     <platform name="android">
         <preference name="StatusBarBackgroundColor" value="#211717"/>
         <icon density="ldpi" src="www/res/icon/android/192.png" />
