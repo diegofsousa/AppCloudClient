@@ -7,7 +7,7 @@
     <author email="diegofernando5672@gmail.com" href="http://github.com/diegofsousa">
         AppCloud
     </author>
-    <content src="index.html" />
+    <content src="index.html" />    
     <preference name="Orientation" value="portrait"/>
     <preference name="Fullscreen" value="false"/>
     <preference name="DisallowOverscroll" value="true"/>
@@ -32,19 +32,13 @@
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <splash src="www/res/screen/android/drawable-land-ldpi-screen.png"  />
     <platform name="android">
-        <preference name="StatusBarBackgroundColor" value="#1976d2"/>
+        <preference name="StatusBarBackgroundColor" value="#212121"/>
         <icon density="ldpi" src="www/res/icon/android/192.png" />
         <icon density="mdpi" src="www/res/icon/android/144.png" />
         <icon density="hdpi" src="www/res/icon/android/96.png" />
         <icon density="xhdpi" src="www/res/icon/android/72.png" />
         <icon density="xxhdpi" src="www/res/icon/android/48.png" />
         <icon density="xxxhdpi" src="www/res/icon/android/36.png" />
-        <splash density="land-ldpi" src="www/res/screen/android/drawable-land-ldpi-screen.png" />
-        <splash density="land-mdpi" src="www/res/screen/android/drawable-land-mdpi-screen.png" />
-        <splash density="land-hdpi" src="www/res/screen/android/drawable-land-hdpi-screen.png" />
-        <splash density="land-xhdpi" src="www/res/screen/android/drawable-land-xhdpi-screen.png" />
-        <splash density="land-xxhdpi" src="www/res/screen/android/drawable-land-xxhdpi-screen.png" />
-        <splash density="land-xxxhdpi" src="www/res/screen/android/drawable-land-xxxhdpi-screen.png" />
         <splash density="port-ldpi" src="www/res/screen/android/drawable-port-ldpi-screen.png" />
         <splash density="port-mdpi" src="www/res/screen/android/drawable-port-mdpi-screen.png" />
         <splash density="port-hdpi" src="www/res/screen/android/drawable-port-hdpi-screen.png" />
