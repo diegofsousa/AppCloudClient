@@ -74,10 +74,10 @@ function saveIPBridge(){
 }
 
 /*
-Função responsável validar o input para que aceite apenas numeros e vírgula.
+Função responsável validar o input para que aceite apenas numeros e vírgula e sinal de menos.
 */
 function somenteNumeros(num) {
-    var er = /[^0-9,]/;
+    var er = /[^0-9,-]/;
     er.lastIndex = 0;
     var campo = num;
     if (er.test(campo.value)) {
@@ -97,7 +97,11 @@ function ser_choices(){
     for (var i = 0; i < servers.length; i++) {
         console.log(servers[i][0]);
 
-        $('#serverschoice').append("<option value = '"+servers[i][0]+"'>"+servers[i][0]+" - "+servers[i][1]+"</option>");
+        if (servers[i][1] == 'Limite de TTL atingido') {
+             $('#serverschoice').append("<option value = '' disabled selected>"+servers[i][0]+" - "+servers[i][1]+"</option>");
+        } else {
+            $('#serverschoice').append("<option value = '"+servers[i][0]+"'>"+servers[i][0]+" - "+servers[i][1]+"</option>");
+        }
     }
 }
 
